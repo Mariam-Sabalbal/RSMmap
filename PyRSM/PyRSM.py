@@ -1815,9 +1815,9 @@ class PyRSM:
                     
             for m in range(len(self.model)):
                 self.param=[c,m,0]
-                if self.model[m]!='LOCI' or self.model[m]!='FM LOCI':
+                if self.model[m]!='LOCI' and self.model[m]!='FM LOCI':
                     
-                    if self.model[m]=='FM KLIP' or self.model[m]=='FM LOCI':
+                    if self.model[m]=='FM KLIP':
                         max_rad=self.max_r+1
                     else:
                         max_rad=self.maxradius+1
@@ -5322,7 +5322,7 @@ class PyRSM:
     
         expected_pos=np.copy([centroid_y,centroid_x]) 
     
-        from vip_hci.negfc import firstguess
+        from vip_hci.fm import firstguess
         #from vip_hci.negfc import firstguess_from_coord 
         if first_guess==True:
             ini_flux=[]
